@@ -20,7 +20,7 @@ Template.list.helpers({
       // If hide completed is checked, filter tasks
       return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
-    //queue
+    //queue ...
     // return Tasks.find({});
     // Otherwise, return all of the tasks
     //stack ...
