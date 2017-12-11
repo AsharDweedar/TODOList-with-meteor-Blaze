@@ -11,6 +11,7 @@ import './task.js';
 
 Template.list.onCreated(function listOnCreated() {
   this.state = new ReactiveDict();
+  Meteor.subscribe('tasks');
 });
 
 Template.list.helpers({

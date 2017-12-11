@@ -8,8 +8,8 @@ import './add.html';
 
 Template.add.events({
     'submit .add-task'(event) {
-        var {target} = event;
-        var {text: {value}} = target;
+        var target = event.target;
+        var text = target.text.value;
         event.preventDefault();
         Meteor.call('tasks.insert', text);
         target.text.value = '';
