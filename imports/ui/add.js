@@ -11,10 +11,7 @@ Template.add.events({
         var {target} = event;
         var {text: {value}} = target;
         event.preventDefault();
-        Tasks.insert({text : value, createdAt: new Date(),
-        owner: Meteor.userId(),
-        username: Meteor.user().username,
-    });
+        Meteor.call('tasks.insert', text);
         target.text.value = '';
     }
 });
