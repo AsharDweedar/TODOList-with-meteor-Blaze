@@ -2,12 +2,16 @@
   <div class="container">
 
     <header>
-      <h1>Todo List</h1>
+      <h1>Todo ({{incompleteCount}})</h1>
     </header>
 
     {{> list}}
-
+    
+    {{#if currentUser}}
     {{> add}}
+    {{/if}}
+    <p></p>
+    {{> loginButtons}}
 
   </div>
 </body>
