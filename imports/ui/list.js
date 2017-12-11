@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating';
 import { Tasks } from '../api/tasks.js';
 
 //my template
-import './body.html'; 
+import './list.html'; 
 //other templates i want to use 
 import './task.js'; 
 
