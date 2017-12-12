@@ -11,7 +11,10 @@ import './task.js';
 
 Template.list.onCreated(function listOnCreated() {
   this.state = new ReactiveDict();
-  Meteor.subscribe('tasks');
+  this.autorun(() => {
+    this.subscribe('tasks');
+  });
+  // Meteor.subscribe('tasks');
 });
 
 Template.list.helpers({
@@ -21,9 +24,9 @@ Template.list.helpers({
       // If hide completed is checked, filter tasks
       return Tasks.find({ checked: { $ne: true } }, { sort: { createdAt: -1 } });
     }
+    // Otherwise, return all of the tasks
     //queue ...
     // return Tasks.find({});
-    // Otherwise, return all of the tasks
     //stack ...
     return Tasks.find({}, { sort: { createdAt: -1 } });
   },

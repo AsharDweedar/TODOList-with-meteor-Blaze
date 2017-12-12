@@ -1,8 +1,12 @@
 <Template name="list">
     <ul>
-        {{#each tasks}}
+        {{#if Template.subscriptionsReady}}
+            {{#each tasks}}
             {{> task}}
-        {{/each}}
+            {{/each}}
+        {{else}}
+            Loading...
+        {{/if}}
     </ul>
 
     <label class="hide-completed">
