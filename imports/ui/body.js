@@ -13,7 +13,7 @@ Template.body.helpers({
         return Tasks.find({ checked: { $ne: true } }).count();
     },
     currentUser () {
-        return  Meteor.userId() || false;
+        return !!Meteor.userId() ;
     }
 })
   
